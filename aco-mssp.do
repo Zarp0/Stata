@@ -1,5 +1,5 @@
 clear all
-import excel using "W:\PATH\Papers\ACO MSSP Year 1 (Berkson)\Stata\Exhibit 1.xlsx", firstrow
+import excel using "...\Exhibit 1.xlsx", firstrow
 
 *exclude ACOs that did not successfully report on quality in 2013 b/c of incomplete quality data
 *drop if SuccessfullyReportedQuality == "No - 2013"
@@ -28,7 +28,7 @@ graph box logpcb, by(GeneratedSavingsGSRMSR)
 gen logmsr = log(MSRcalculatedTrack2adjust)
 graph box logmsr, by(GeneratedSavingsGSRMSR)
 
-log using "W:\PATH\Papers\ACO MSSP Year 1 (Berkson)\Stata\Table_1.statalog", replace text
+log using "...\Table_1.statalog", replace text
 
 tab AgreementStartDate GeneratedSavingsGSRMSR, nocol chi2
 
