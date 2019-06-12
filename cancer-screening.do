@@ -184,3 +184,11 @@ tabulate racialethnic achc_ind if bc_ind == 1, chi2
 logistic cvc_ind $cov10, vce (cluster patient_id)
 logistic crc_ind $cov10, vce (cluster patient_id)
 logistic bc_ind $cov10, vce (cluster patient_id)
+
+xi: logistic achc_ind breastscreening i.age_bc i.insurancestatus i.comorbidities
+xi: logistic achc_ind cervicalscreening i.age_cvc i.insurancestatus i.comorbidities
+xi: logistic achc_ind colonscreening sd_female_ind i.age_crc i.insurancestatus i.comorbidities
+
+xi: logistic achc_ind breastscreening i.age_bc i.insurancestatus 
+xi: logistic achc_ind cervicalscreening i.age_cvc i.insurancestatus 
+xi: logistic achc_ind colonscreening sd_female_ind i.age_crc i.insurancestatus 
